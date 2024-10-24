@@ -1,0 +1,234 @@
+/* Esquema de cores do Windows 98 */
+:root {
+    --primary-color: #c0c0c0;
+    --secondary-color: #ffffff;
+    --highlight-color: #000080;
+    --shadow-color: #808080;
+    --dark-shadow-color: #404040;
+    --light-shadow-color: #dfdfdf;
+    --text-color: black;
+    --background-color: #c3c3c3;
+    --button-face: #dfdfdf;
+    --button-highlight: #ffffff;
+    --button-shadow: #808080;
+    --button-text: black;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--text-color);
+    font-family: 'MS Sans Serif', Tahoma, Geneva, sans-serif;
+    background-image: url('./background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; /* Garante que o body ocupe a altura total da janela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Container principal do chat */
+  .chat-container {
+    width: 700px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilo da tela de entrada */
+  .join-container {
+    width: 700px;
+    height: 500px;
+    border: 2px solid var(--shadow-color);
+    background-color: var(--primary-color);
+    box-shadow: 2px 2px 0 0 var(--dark-shadow-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .join-container h2 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: var(--text-color);
+  }
+  
+  .join-container input {
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo da caixa de chat */
+  .chat-box {
+    width: 700px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-header {
+    height: 25px;
+  }
+  
+  /* Área das mensagens do chat */
+  .chat-messages {
+    flex: 1;
+    padding: 5px;
+    overflow-y: auto;
+  }
+  
+  .chat-messages::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  .chat-messages::-webkit-scrollbar-track {
+    background: var(--primary-color);
+  }
+  
+  .chat-messages::-webkit-scrollbar-thumb {
+    background: var(--shadow-color);
+  }
+  
+  /* Estilo das mensagens */
+  .messages {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Alinhamento padrão das mensagens (esquerda) */
+  .message-content {
+    background-color: var(--button-face);
+    padding: 5px;
+    border: 2px solid var(--shadow-color);
+    box-shadow: inset -1px -1px 0 var(--button-highlight),
+                inset 1px 1px 0 var(--button-shadow);
+    max-width: 60%;
+    word-wrap: break-word;
+    align-self: flex-start;
+  }
+  
+  /* Alinhamento das mensagens do usuário (direita) */
+  .my-message .message-content {
+    align-self: flex-end;
+    background-color: var(--light-shadow-color);
+  }
+  
+  /* Opcional: Ajuste na aparência das mensagens do usuário */
+  .my-message .message-content {
+    background-color: var(--light-shadow-color);
+    /* Inverte o box-shadow para simular o estilo do Windows 98 */
+    box-shadow: inset 1px 1px 0 var(--button-shadow),
+                inset -1px -1px 0 var(--button-highlight);
+  }
+  
+  .message-nickname {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+  
+  .message-time {
+    font-size: 10px;
+    color: var(--dark-shadow-color);
+    margin-top: 2px;
+    align-self: flex-start;
+  }
+  
+  .my-message .message-time {
+    align-self: flex-end;
+  }
+  
+  /* Estilo das imagens dentro das mensagens */
+  .message-image {
+    max-width: 200px;
+    max-height: 200px;
+    display: block;
+    margin: 5px 0;
+  }
+  
+  /* Área de entrada de mensagem */
+  .env {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .env input[type='text'] {
+    flex: 1;
+    padding: 5px;
+    margin: 0 5px;
+  }
+  
+  .env button {
+    width: 40px;
+    height: 25px;
+    cursor: pointer;
+  }
+  
+  /* Estilo da pré-visualização de imagem */
+  .image-preview {
+    margin-bottom: 10px;
+  }
+  
+  .message-image-preview {
+    max-width: 100px;
+    max-height: 100px;
+    border: 2px solid var(--shadow-color);
+    box-shadow: inset -1px -1px 0 var(--button-highlight),
+                inset 1px 1px 0 var(--button-shadow);
+  }
+  
+  /* Animação do ícone de carregamento */
+  .load {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Estilo dos botões */
+  button,
+  .entrar {
+    background-color: var(--button-face);
+    color: var(--button-text);
+    border: 2px solid var(--shadow-color);
+    box-shadow: inset -1px -1px 0 var(--button-highlight),
+                inset 1px 1px 0 var(--button-shadow);
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  
+  button:hover,
+  .entrar:hover {
+    background-color: var(--button-face);
+  }
+  
+  button:active,
+  .entrar:active {
+    box-shadow: inset 1px 1px 0 var(--button-shadow),
+                inset -1px -1px 0 var(--button-highlight);
+  }
+  
+  .entrar {
+    margin-top: 10px;
+  }
+  

@@ -1,38 +1,186 @@
-.App {
-  text-align: center;
+.area{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ca{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.caa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width: 100;
+}
+
+.caa button{
+    margin: 2px;
+}
+
+.arearedes{
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    overflow: hidden;
+    top: 200px;
+    right: 500px;
+    position: absolute;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+button a{
+    color: black;
+    font-family: 'MS Sans Serif', Tahoma, Geneva, sans-serif;
+    font-weight: 100;
+}
+
+
+.crt::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .crt::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    transform: rotateX(2deg) rotateY(-2deg);
+    /* Garante que o filtro CRT acompanhe a curvatura */
+    transform-origin: center;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .crt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    color: black !important;
+    top: 0;
+    left: 0;
+    overflow: hidden;
   }
-}
+  
+  @keyframes flicker {
+    0% {
+      opacity: 0.27861;
+    }
+  
+    5% {
+      opacity: 0.34769;
+    }
+  
+    10% {
+      opacity: 0.23604;
+    }
+  
+    15% {
+      opacity: 0.90626;
+    }
+  
+    20% {
+      opacity: 0.18128;
+    }
+  
+    25% {
+      opacity: 0.83891;
+    }
+  
+    30% {
+      opacity: 0.65583;
+    }
+  
+    35% {
+      opacity: 0.67807;
+    }
+  
+    40% {
+      opacity: 0.26559;
+    }
+  
+    45% {
+      opacity: 0.84693;
+    }
+  
+    50% {
+      opacity: 0.96019;
+    }
+  
+    55% {
+      opacity: 0.08594;
+    }
+  
+    60% {
+      opacity: 0.20313;
+    }
+  
+    65% {
+      opacity: 0.71988;
+    }
+  
+    70% {
+      opacity: 0.53455;
+    }
+  
+    75% {
+      opacity: 0.37288;
+    }
+  
+    80% {
+      opacity: 0.71428;
+    }
+  
+    85% {
+      opacity: 0.70419;
+    }
+  
+    90% {
+      opacity: 0.7003;
+    }
+  
+    95% {
+      opacity: 0.36108;
+    }
+  
+    100% {
+      opacity: 0.24387;
+    }
+  }
